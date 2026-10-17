@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root{--ink:#191a2e;--muted:#777991;--line:#e8e8f1;--purple:#4f46e5;--purple-dark:#3730a3;--soft:#f5f5ff;--paper:#fff;--green:#15966b;--shadow:0 16px 45px rgba(32,29,86,.07)}
+*{box-sizing:border-box}
+body{margin:0;background:#fafaff;color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.5}
+button,input,textarea{font:inherit}
+.topbar{height:76px;padding:0 max(24px,calc((100% - 1060px)/2));display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.9);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:11px;color:var(--ink);font-weight:700;text-decoration:none;font-size:17px;letter-spacing:-.3px}
+.brand-icon{width:35px;height:35px;display:grid;place-items:center;background:var(--purple);color:white;border-radius:11px;font-family:Manrope,sans-serif;font-weight:800}
+.status{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:12px}
+.status-dot{width:8px;height:8px;border-radius:50%;background:#e5a23d}
+.status-dot.online{background:#20b57c}.status-dot.offline{background:#e05252}
+.container{max-width:860px;margin:0 auto;padding:55px 24px 30px}
+.welcome{margin:0 0 30px}
+.eyebrow{margin:0 0 8px;color:var(--purple);font-size:10px;font-weight:700;letter-spacing:1.8px}
+h1,h2,h3,p{margin-top:0}
+h1{font-family:Manrope,sans-serif;font-size:clamp(36px,6vw,54px);line-height:1.12;letter-spacing:-2.2px;margin-bottom:15px}
+h1 span{color:var(--purple)}
+.subtitle{max-width:490px;color:var(--muted);font-size:15px;margin-bottom:0}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}
+.composer{padding:26px}
+.composer h2,.section-heading h2{font-family:Manrope,sans-serif;font-size:21px;letter-spacing:-.6px;margin-bottom:20px}
+label{display:block;font-size:12px;font-weight:700;margin:14px 0 7px}
+input,textarea{width:100%;padding:12px 14px;border:1px solid #e1e1ee;border-radius:10px;background:#fdfdff;color:var(--ink);outline:none;transition:border .2s,box-shadow .2s}
+input:focus,textarea:focus{border-color:#9690ff;box-shadow:0 0 0 3px #efeeff}
+textarea{resize:vertical;min-height:100px}
+input::placeholder,textarea::placeholder{color:#aaaabd}
+.composer-footer{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:15px}
+.hint{font-size:11px;color:var(--muted)}
+button{cursor:pointer;border:0}
+#addNoteButton{background:var(--purple);color:white;border-radius:10px;padding:11px 17px;font-size:13px;font-weight:700;white-space:nowrap;box-shadow:0 6px 14px #4f46e52a}
+#addNoteButton:hover{background:var(--purple-dark)}
+.form-message{min-height:0;margin:8px 0 0;color:var(--green);font-size:12px}
+.form-message:empty{display:none}
+.notes-section{margin-top:38px}
+.section-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}
+.section-heading h2{margin-bottom:0}
+.count{display:inline-grid;place-items:center;min-width:25px;height:25px;padding:0 7px;margin-left:5px;border-radius:8px;background:#eeedff;color:var(--purple);font-size:12px;vertical-align:3px}
+.text-button{background:transparent;color:#8a8ba1;font-size:12px;padding:8px}
+.text-button:hover{color:#d04444}
+.notes-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.note-card{background:white;border:1px solid var(--line);border-radius:15px;padding:19px;overflow-wrap:anywhere;animation:appear .2s ease}
+.note-card h3{font-family:Manrope,sans-serif;font-size:16px;letter-spacing:-.3px;margin-bottom:8px}
+.note-card p{font-size:13px;color:#696b83;white-space:pre-wrap;margin-bottom:17px}
+.note-meta{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f0f0f6;padding-top:11px;color:#a0a0b3;font-size:10px}
+.delete-note{color:#a0a0b3;background:transparent;font-size:11px;padding:3px 0 3px 8px}
+.delete-note:hover{color:#d04444}
+.empty-state{text-align:center;padding:37px 16px 45px;color:var(--muted)}
+.empty-icon{width:47px;height:47px;display:grid;place-items:center;margin:0 auto 12px;border-radius:15px;background:#eeedff;color:var(--purple);font-size:24px}
+.empty-state h3{color:var(--ink);font-size:15px;margin-bottom:5px}
+.empty-state p{font-size:12px;margin-bottom:0}
+.project-info{display:flex;gap:14px;align-items:flex-start;padding:19px;margin-top:30px;background:#f7f7ff}
+.info-icon{flex:0 0 30px;width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:#e4e2ff;color:var(--purple);font-weight:800}
+.project-info h3{font-size:13px;margin:1px 0 4px}.project-info p{font-size:11px;color:var(--muted);margin:0}
+footer{max-width:860px;margin:0 auto;padding:22px 24px 30px;display:flex;justify-content:space-between;color:#a2a2b5;font-size:10px;border-top:1px solid var(--line)}
+@keyframes appear{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.topbar{height:65px;padding:0 18px}.container{padding:38px 17px 24px}.composer{padding:19px}.notes-grid{grid-template-columns:1fr}.composer-footer{align-items:flex-start;flex-direction:column}.hint{order:2}#addNoteButton{width:100%}footer{padding:20px 17px;gap:12px;flex-wrap:wrap}}
