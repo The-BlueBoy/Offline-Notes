@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4f46e5">
+  <meta name="description" content="A simple notes app that works offline.">
+  <title>Offline Notes</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="OfflineNotes.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Offline Notes home">
+      <span class="brand-icon">N</span>
+      <span>Offline Notes</span>
+    </a>
+    <div class="status"><span id="statusDot" class="status-dot"></span><span id="connectionStatus">Checking connection…</span></div>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <p class="eyebrow">YOUR PERSONAL SPACE</p>
+      <h1>Keep your thoughts<br><span>in one place.</span></h1>
+      <p class="subtitle">A lightweight notes app that stays useful—even when your internet doesn't.</p>
+    </section>
+
+    <section class="composer card" aria-labelledby="new-note-heading">
+      <h2 id="new-note-heading">Create a note</h2>
+      <label for="noteTitle">Title</label>
+      <input id="noteTitle" type="text" maxlength="80" placeholder="e.g. Ideas for my project">
+      <label for="noteBody">Your note</label>
+      <textarea id="noteBody" rows="4" maxlength="2000" placeholder="Write something worth remembering…"></textarea>
+      <div class="composer-footer">
+        <span class="hint">Notes are saved on this device.</span>
+        <button id="addNoteButton" type="button"><span aria-hidden="true">＋</span> Add note</button>
+      </div>
+      <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="notes-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR COLLECTION</p>
+          <h2>My notes <span id="noteCount" class="count">0</span></h2>
+        </div>
+        <button id="clearButton" class="text-button" type="button">Clear all</button>
+      </div>
+      <div id="notesList" class="notes-grid"></div>
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">✎</div>
+        <h3>Your page is a blank canvas</h3>
+        <p>Add your first note above. It will be here when you return.</p>
+      </div>
+    </section>
+
+    <section class="project-info card">
+      <div class="info-icon">✓</div>
+      <div>
+        <h3>Built as a Progressive Web App</h3>
+        <p>This demo uses a web app manifest, a registered service worker, the Cache API, and the fetch event to make core files available offline.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>Offline Notes</span><span>Made for SLE · PWA Demo</span></footer>
+  <script src="OfflineNotes.js"></script>
+</body>
+</html>
